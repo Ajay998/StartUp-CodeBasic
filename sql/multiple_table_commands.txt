@@ -1,0 +1,154 @@
+
+# Print the movie ID, title, budget, revenue, currency, and unit for all movies by joining the movies and financials tables on the movie ID.
+
+SELECT m.movie_id, m.title, f.budget, f.revenue, f.currency, f.unit 
+FROM movies m
+JOIN financials f
+ON m.movie_id = f.movie_id;
+
+# Left join the movies and financials tables to get all movies along with their financial details, if available.
+SELECT m.movie_id, m.title, f.budget, f.revenue, f.currency, f.unit 
+FROM movies m
+LEFT JOIN financials f
+ON m.movie_id = f.movie_id;
+
+
+# Right join the movies and financials tables to get all financial details along with their corresponding movies, if available.
+SELECT m.movie_id, m.title, f.budget, f.revenue, f.currency, f.unit 
+FROM movies m
+RIGHT JOIN financials f
+ON m.movie_id = f.movie_id;
+
+# Full outer join the movies and financials tables to get all movies and their financial details, if available.
+SELECT m.movie_id, m.title, f.budget, f.revenue, f.currency, f.unit 
+FROM movies m
+FULL OUTER JOIN financials f
+ON m.movie_id = f.movie_id;
+
+# USING clause to join the movies and financials tables on the movie ID.
+SELECT m.movie_id, m.title, f.budget, f.revenue, f.currency, f.unit 
+FROM movies m
+JOIN financials f
+USING (movie_id);
+
+# Show all the movies with their language names
+SELECT m.movie_id, m.title, l.language_name 
+FROM movies m
+JOIN languages l
+USING (language_id);
+
+# Show all Telugu movie names (assuming you don't know the language id for Telugu)
+SELECT m.movie_id, m.title
+FROM movies m
+JOIN languages l
+ON m.language_id = l.language_id
+WHERE l.language_name = 'Telugu';
+
+# Show the language and number of movies released in that language
+SELECT l.language_name, COUNT(m.movie_id) AS movie_count
+FROM movies m
+JOIN languages l
+USING (language_id)
+GROUP BY l.language_name;
+
+# CROSS JOIN to get all combinations of movies and languages
+SELECT m.title, l.language_name
+FROM movies m
+CROSS JOIN languages l;
+
+# CROSS JOIN to get all combinations of movies and languages with a concatenated column
+SELECT *, CONCAT(m.title, ' - ', l.language_name) AS movie_language 
+FROM movies m
+CROSS JOIN languages l; 
+
+# CROSS JOIN to get all combinations of food items and their variants along with total price
+SELECT *, CONCAT(name,"-",variant_name) AS full_name,
+(price + variant_price) AS total_price
+FROM foods_db.items
+CROSS JOIN foods_db.variants;
+
+# Print all Hollywood movies along with their profit (revenue - budget). Order the results by profit in descending order.
+SELECT m.movie_id, m.title, f.budget, f.revenue, f.currency, f.unit,
+       (f.revenue - f.budget) AS profit
+FROM movies m
+JOIN financials f
+ON m.movie_id = f.movie_id
+WHERE industry = 'Hollywood' 
+ORDER BY profit DESC
+
+Output:
++----------+----------------------+---------+----------+----------+-----------+------------+
+| movie_id | title                | budget  | revenue  | currency | unit      | profit     |
++----------+----------------------+---------+----------+----------+-----------+------------+
+| 1        | The Dark Knight      | 185000000 | 1004558444 | USD      | millions  | 819558454 |
+| 2        | Inception            | 160000000 | 829895144  | USD      | millions  | 669895144 |
+| 3        | Interstellar         | 165000000 | 677471339  | USD      | millions  | 512471339 |
++----------+---------------------+---------+----------+----------+-----------+------------+
+
+
+# Print all Hollywood movies along with their profit (revenue - budget) in millions. Order the results by profit in descending order.
+select m.movie_id, m.title, f.budget, f.revenue, f.currency, f.unit,
+       CASE 
+              WHEN f.unit = 'thousands' THEN ROUND((revenue-budget)/1000,1)
+              WHEN f.unit = 'millions' THEN ROUND((revenue-budget)*1000000,1)
+              WHEN f.unit = 'billions' THEN ROUND((revenue-budget)*10000,1)
+              ELSE ROUND(f.revenue-f.budget,1)
+         END AS profit_mln
+FROM movies m
+JOIN financials f
+ON m.movie_id = f.movie_id
+WHERE industry = 'Hollywood'
+ORDER BY profit_mln DESC;
+
+Output:
++----------+----------------------+---------+----------+----------+-----------+------------+
+| movie_id | title                | budget  | revenue  | currency | unit      | profit_mln |
++----------+----------------------+---------+----------+----------+-----------+------------+
+| 1        | The Dark Knight      | 185000000 | 1004558444 | USD      | millions  | 819558454 |
+| 2        | Inception            | 160000000 | 829895144  | USD      | millions  | 669895144 |
+| 3        | Interstellar         | 165000000 | 677471339  | USD      | millions  | 512471339 |
+
+
+
+# Print all movies along with a concatenated list of their actors separated by ' | '.
+SELECT m.title, group_concat(a.name, SEPARATOR ' | ') as actors FROM movies m
+JOIN movie_actors ma ON m.movie_id = ma.movie_id
+JOIN actors a ON ma.actor_id = a.actor_id
+GROUP BY m.movie_id;
+
+Output:
++----------------------+-----------------------------------------------+
+| title                | actors                                        |
++----------------------+-----------------------------------------------+
+| The Dark Knight      | Christian Bale | Heath Ledger | Aaron Eckhart |
+| Inception            | Leonardo DiCaprio | Joseph Gordon-Levitt | Ellen Page |
+| Interstellar         | Matthew McConaughey | Anne Hathaway | Jessica Chastain |
+
+
+
+
+Generate a report of all Hindi movies sorted by their revenue amount in millions.
+Print movie name, revenue, currency, and unit
+
+SELECT m.title, f.revenue, f.currency, f.unit, 
+			CASE 
+			WHEN f.unit="Thousands" THEN ROUND(f.revenue/1000,2)
+			WHEN f.unit="Billions" THEN ROUND(f.revenue*1000,2)
+			ELSE f.revenue 
+			END as revenue_mln
+	FROM movies m
+	JOIN financials f
+			ON m.movie_id=f.movie_id
+	JOIN languages l
+			ON m.language_id=l.language_id
+	WHERE l.name="Hindi"
+	ORDER BY revenue_mln DESC
+
+Output:
++----------------------+----------+----------+-----------+--------------+
+| title                | revenue  | currency | unit      | revenue_mln  |
++----------------------+----------+----------+-----------+--------------+
+| Dangal               | 200000000 | USD      | millions  | 200          |
+| Bajrangi Bhaijaan   | 96900000  | USD      | | millions  | 96.9         |
+| Secret Superstar     | 88800000  | USD      | millions  | 88.8         |
++----------------------+----------+----------
