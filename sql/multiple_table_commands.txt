@@ -152,3 +152,5 @@ Output:
 | Bajrangi Bhaijaan   | 96900000  | USD      | | millions  | 96.9         |
 | Secret Superstar     | 88800000  | USD      | millions  | 88.8         |
 +----------------------+----------+----------
+
+
