@@ -1,0 +1,90 @@
+# List all records from the movies table in the moviesdb database
+SELECT * FROM moviesdb.movies;
+
+# List specific columns (title, industry, release_year) from the movies table in the moviesdb database
+SELECT title, industry FROM moviesdb.movies;
+
+# Switch to the moviesdb database and list specific columns (title, industry, release_year) from the movies table
+USE moviesdb;
+SELECT title, industry, release_year FROM movies;
+
+# List all records from the movies table where the industry is 'Hollywood'
+SELECT * from movies where industry='Hollywood';
+
+# Count the number of records in the movies table where the industry is 'Hollywood'
+SELECT COUNT(*) FROM movies where industry='Hollywood';
+
+# List all distinct industries from the movies table
+SELECT DISTINCT industry FROM movies;
+
+# List all records from the movies table where the title contains the word 'Thor'
+SELECT * FROM movies where title LIKE '%Thor%';
+
+# List all records from the movies table where the title starts with 'Thor'
+SELECT * FROM movies where title LIKE 'Thor%';
+
+#  Print all movie titles and release year for all Marvel Studios movies.
+SELECT title, release_year FROM movies WHERE industry='Marvel Studios';
+
+# Print all movies that have Avenger in their name.
+SELECT * FROM movies WHERE title LIKE '%Avenger%';
+
+# Print the year when the movie "The Godfather" was released.
+SELECT release_year FROM movies WHERE title='The Godfather';
+
+# Print all distinct movie studios in the Bollywood industry.
+SELECT DISTINCT studio FROM movies WHERE industry='Bollywood';
+
+# Print all movies released after the year 2015.
+SELECT * FROM movies WHERE release_year > 2015;
+
+# Print all movies with an IMDB rating less than or equal to 8.0.
+SELECT * FROM movies WHERE imdb_rating <= 8.0;
+
+# Print all movies released between the years 2000 and 2010.
+SELECT * FROM movies WHERE release_year BETWEEN 2000 AND 2010;
+
+# Print all movies that are either from the Hollywood industry or have an IMDB rating greater than 9.0.
+SELECT * FROM movies WHERE industry='Hollywood' OR imdb_rating > 9.0;
+
+# Print all movies released in the years 1994, 2008, or 201
+SELECT * FROM movies WHERE release_year IN (1994, 2008, 2010);
+
+# Print all movies that do not have an IMDB rating.
+SELECT * FROM movies WHERE imdb_rating IS NULL;
+
+# Print all movies that do not have an IMDB rating.
+SELECT * FROM movies WHERE imdb_rating IS NOT NULL;
+
+# Print all movies ordered by their IMDB rating in descending order.
+SELECT * FROM movies ORDER BY imdb_rating DESC;
+
+# Print all movies ordered by their release year in ascending order.
+SELECT * FROM movies WHERE industry = "Hollywood" ORDER BY release_year ASC;
+
+# Print the top 5 movies with the highest IMDB ratings.
+SELECT * FROM movies ORDER BY imdb_rating DESC LIMIT 5;
+
+# Print the top 5 movies with the highest IMDB ratings, skipping the first one.
+SELECT * FROM movies ORDER BY imdb_rating DESC LIMIT 5 OFFSET 1;
+
+# Print the second highest IMDB rated movie.
+SELECT * FROM movies ORDER BY imdb_rating DESC LIMIT 1 OFFSET 1;
+
+# Print all movies in the order of their release year
+SELECT * FROM movies ORDER BY release_year;
+
+# All movies released in the year 2022
+SELECT * FROM movies WHERE release_year = 2022;
+
+# Now all the movies released after 2020
+SELECT * FROM movies WHERE release_year > 2020;
+
+# Select all movies that are by either Marvel Studios or Hombale Films
+SELECT * FROM movies WHERE studio = 'Marvel Studios' OR studio = 'Hombale Films';
+
+#  Select all THOR movies by their release year
+SELECT * FROM movies WHERE title LIKE 'Thor%' ORDER BY release_year;
+
+# Select all movies that are not by Marvel Studios
+SELECT * FROM movies WHERE studio != 'Marvel Studios';
