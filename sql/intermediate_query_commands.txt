@@ -1,0 +1,79 @@
+
+# Print the minimum IMDB rating of all Hollywood movies.
+SELECT MIN(imdb_rating) FROM movies WHERE industry='Hollywood';
+
+# Print the maximum IMDB rating of all Hollywood movies.
+SELECT MAX(imdb_rating) FROM movies WHERE industry='Hollywood';
+
+# Print the average IMDB rating of all Hollywood movies.
+SELECT AVG(imdb_rating) FROM movies WHERE industry='Hollywood';
+
+# Print the average IMDB rating of all Hollywood movies rounded to 2 decimal places.
+SELECT ROUND(AVG(imdb_rating), 2) FROM movies WHERE industry='Hollywood';
+
+# Custom column header for the average IMDB rating of all Hollywood movies.
+SELECT AVG(imdb_rating) AS average_imdb_rating FROM movies WHERE industry='Hollywood';
+
+# Count the number of movies in each industry.
+SELECT industry, COUNT(*) AS movie_count FROM movies GROUP BY industry;
+
+# Count the number of movies in each industry and order the results by movie count in descending order.
+SELECT industry, COUNT(*) AS movie_count FROM movies GROUP BY industry ORDER BY movie_count DESC;   
+
+# Count the number of movies in each studio along with the average IMDB rating of movies from that studio, rounded to 2 decimal places. Order the results by the number of movies in descending order.
+SELECT studio, COUNT(industry) AS industry_count, ROUND(AVG(imdb_rating), 2) AS average_imdb_rating FROM movies GROUP BY studio ORDER BY industry_count DESC;
+
+Exercise - Summary analytics (MIN, MAX, AVG, GROUP BY)
+1. How many movies were released between 2015 and 2022
+SELECT COUNT(*) FROM movies WHERE release_year BETWEEN 2015 AND 2022;
+
+2. Print the max and min movie release year
+SELECT MAX(release_year) AS max_release_year, MIN(release_year) AS min_release_year FROM movies;
+
+3. Print a year and how many movies were released in that year starting with the latest year
+SELECT release_year, COUNT(*) AS movie_count FROM movies GROUP BY release_year ORDER BY release_year DESC;
+
+
+# Print all years AND COUNT where more than 2 movies were released.
+SELECT release_year, COUNT(*) AS movie_count FROM movies GROUP BY release_year HAVING COUNT(*) > 2 ORDER BY release_year DESC;
+
+# Print all studios AND COUNT where more than 2 movies were produced.
+SELECT studio, COUNT(*) AS movie_count FROM movies GROUP BY studio HAVING COUNT(*) > 2 ORDER BY movie_count DESC;
+
+Get current date and time
+# Get the current date
+SELECT CURRENT_DATE;
+
+# Get the current time
+SELECT CURRENT_TIME;
+
+# Get the current timestamp
+SELECT CURRENT_TIMESTAMP;
+
+# Print all actors and their age based on the current year and their birth year.
+SELECT *, YEAR(CURDATE()) - birth_year AS age FROM actors;
+
+# Print all actors and their age based on the current year and their birth year. Only include actors older than 50.
+SELECT *, YEAR(CURDATE()) - birth_year AS age FROM actors HAVING age > 50;
+
+# Print all movies and their profit (revenue - budget). Only include movies with a profit greater than 50 million. Order the results by profit in descending order.
+SELECT *, (revenue - budget) AS profit FROM movies HAVING profit > 50000000 ORDER BY profit DESC;
+
+# Print all movies and their revenue in INR. Assume 1 USD = 74 INR.
+SELECT *, IF(currency='USD', revenue * 74, revenue) AS revenue_inr FROM movies;
+
+# Print all movies and their revenue in INR. Assume 1 USD = 74 INR, 1 CAD = 60 INR, 1 GBP = 100 INR.
+select *, case 
+    when unit='thousand' then revenue / 1000
+    when unit='millions' then revenue * 1000000
+    when unit='billions' then revenue * 10000
+    else revenue
+end as revenue_inr
+from movies;
+
+# Print profit % for all the movies
+select 
+        *, 
+    (revenue-budget) as profit, 
+    (revenue-budget)*100/budget as profit_pct 
+   from financials
