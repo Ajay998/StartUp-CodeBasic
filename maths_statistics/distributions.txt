@@ -1,0 +1,67 @@
+Distributions
+===============
+Empirical distributions are mathematical functions that describe the likelihood of different outcomes in a random experiment. They are essential in statistics for modeling and analyzing data. Here are some common types of probability distributions:
+
+1. Normal Distribution: A continuous probability distribution characterized by its bell-shaped curve, defined by its mean and standard deviation.
+
+2. Binomial Distribution: Models the number of successes in a fixed number of independent Bernoulli trials.
+
+3. Poisson Distribution: Describes the number of events occurring within a fixed interval of time or space.
+
+4. Exponential Distribution: Models the time between events in a Poisson process.
+
+5. Uniform Distribution: A distribution where all outcomes are equally likely within a specified range.
+
+These distributions are fundamental tools for modeling and analyzing random phenomena in various applications.
+
+Probability Density Function (PDF)
+--------------------------------
+A Probability Density Function (PDF) is a function that describes the likelihood of a continuous random variable taking on a specific value. The PDF is used to calculate the probability that the random variable falls within a particular range of values. The area under the curve of the PDF over a given interval represents the probability of the random variable falling within that interval.
+For a continuous random variable X with PDF f(x), the probability that X falls within the interval [a, b] is given by:
+P(a ≤ X ≤ b) = ∫[a to b] f(x) dx
+Where ∫ denotes the integral of the function f(x) from a to b.
+When do we use PDF?
+We use the Probability Density Function (PDF) when dealing with continuous random variables. It helps us understand the distribution of values that the random variable can take and allows us to calculate probabilities over specific intervals
+
+Probability Mass Function (PMF)
+-----------------------------------
+A Probability Mass Function (PMF) is a function that gives the probability that a discrete random variable is exactly equal to a specific value. The PMF is used for discrete random variables, which can take on a countable number of distinct values. For a discrete random variable X with PMF p(x), the probability that X takes on the value x is given by:
+p(x) = P(X = x)
+The PMF satisfies the following properties:
+1. 0 ≤ p(x) ≤ 1 for all x
+2. The sum of the probabilities for all possible values of X equals 1:
+   ∑ p(x) = 1 over all x
+When do we use PMF?
+We use the Probability Mass Function (PMF) when dealing with discrete random variables. It helps us understand the distribution of probabilities for specific outcomes of the random variable.
+
+Cumulative Distribution Function (CDF)
+-----------------------------------
+A Cumulative Distribution Function (CDF) is a function that describes the probability that a random variable takes on a value less than or equal to a specific value. The CDF is defined for both discrete and continuous random variables. For a random variable X, the CDF F(x) is given by:
+F(x) = P(X ≤ x)
+The CDF is a non-decreasing function that ranges from 0 to 1, and it provides a complete description of the distribution of the random variable.    
+
+When do we use CDF?
+We use the Cumulative Distribution Function (CDF) to determine the probability that a random variable falls within a certain range. It is useful for both discrete and continuous random variables and helps in understanding the overall distribution of the variable.
+
+Skweness:
+Skewness is a measure of the asymmetry of a probability distribution. It indicates whether the data points are skewed to the left (negative skewness) or to the right (positive skewness) of the mean. A skewness value of zero indicates a perfectly symmetrical distribution.
+- Positive Skewness: The right tail of the distribution is longer or fatter than the left tail. This indicates that there are more extreme values on the right side of the distribution.
+- Negative Skewness: The left tail of the distribution is longer or fatter than the right tail. This indicates that there are more extreme values on the left side of the distribution.
+- Zero Skewness: The distribution is perfectly symmetrical, with equal tails on both sides of the mean.
+Skewness is important in statistics as it provides insights into the shape of the distribution and helps in understanding the underlying data.
+
+
+Normal Distribution or Gaussian Distribution
+-----------------------------------
+The Normal Distribution, also known as the Gaussian Distribution, is a continuous probability distribution characterized by its bell-shaped curve. It is defined by two parameters: the mean (μ) and the standard deviation (σ). The mean determines the center of the distribution, while the standard deviation measures the spread or dispersion of the data points around the mean.
+The probability density function (PDF) of the normal distribution is given by:
+f(x) = (1 / (σ * √(2π))) * e^(-((x - μ)² / (2σ²)))
+Where:
+- e is the base of the natural logarithm (approximately equal to 2.71828)
+- π is a mathematical constant (approximately equal to 3.14159)
+The normal distribution has several important properties:
+1. Symmetry: The distribution is symmetric around the mean.
+2. Mean, Median, and Mode: In a normal distribution, the mean, median, and mode are all equal.
+3. Empirical Rule: Approximately 68% of the data falls within one standard deviation of the mean, 95% within two standard deviations, and 99.7% within three standard deviations.
+4. Asymptotic: The tails of the normal distribution approach the horizontal axis but never touch it.
+The normal distribution is widely used in statistics and various fields due to its natural occurrence in many real-world phenomena, such as heights, test scores, and measurement errors. It serves as the foundation for many statistical methods and hypothesis testing.

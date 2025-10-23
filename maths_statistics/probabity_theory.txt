@@ -1,0 +1,195 @@
+Probability Theory
+Probability theory is a branch of mathematics concerned with the analysis of random phenomena. It provides a framework for quantifying uncertainty and making predictions about the likelihood of various outcomes. 
+Key Concepts in Probability Theory:
+1. Random Variables: A variable whose values are determined by the outcomes of a random phenomenon.
+2. Probability Distributions: Functions that describe the likelihood of different outcomes for a random variable.
+3. Expected Value: The long-term average value of a random variable, calculated as the weighted sum of all possible values.
+4. Independence: A property of two events where the occurrence of one event does not affect the probability of the other.
+5. Bayes' Theorem: A fundamental theorem that describes how to update probabilities based on new evidence.
+
+Applications of Probability Theory:
+- Risk Assessment: Used in finance and insurance to evaluate the likelihood of adverse events.
+- Statistical Inference: Helps in making predictions and decisions based on data analysis.
+- Machine Learning: Underpins many algorithms that rely on probabilistic models to make predictions.
+- Game Theory: Analyzes strategic interactions where the outcome depends on the actions of multiple agents.
+- Quality Control: Used in manufacturing to monitor and improve product quality through statistical methods.
+Overall, probability theory is essential for understanding and managing uncertainty in various fields, from science and engineering to economics and social sciences.
+
+Fundamental Theorems:
+- Law of Large Numbers: States that as the number of trials increases, the sample mean will converge to the expected value.
+- Central Limit Theorem: States that the distribution of the sum of a large number of independent random variables approaches a normal distribution, regardless of the original distribution of the variables.
+- Markov's Inequality: Provides an upper bound on the probability that a non-negative random variable is greater than or equal to a certain value.
+- Chebyshev's Inequality: Gives a bound on the probability that a random variable deviates from its mean by more than a specified number of standard deviations.
+These theorems form the backbone of probability theory and are widely used in both theoretical and applied contexts.    
+
+Common Probability Distributions:
+- Binomial Distribution: Models the number of successes in a fixed number of independent Bernoulli trials.
+- Poisson Distribution: Describes the number of events occurring within a fixed interval of time or space.
+- Normal Distribution: A continuous probability distribution characterized by its bell-shaped curve, defined by its mean and standard deviation.
+- Exponential Distribution: Models the time between events in a Poisson process.
+- Uniform Distribution: A distribution where all outcomes are equally likely within a specified range.
+These distributions are fundamental tools for modeling and analyzing random phenomena in various applications.
+
+p(head) = 0.5
+p(tail) = 0.5
+
+p(queen of hearts) = 1/52
+p(not queen of hearts) = 51/52
+p(spade card) = 13/52 = 1/4
+p(not spade card) = 39/52 = 3/4
+p(queen of heart and spade card) = 0
+p(queen of heart or spade card) = p(queen of heart) + p(spade card) = 1/52 + 13/52 = 14/52 = 7/26
+p(roll a 3 on a fair six-sided die) = 1/6
+p(roll not a 3 on a fair six-sided die) = 5/6
+p(draw an ace from a standard deck of cards) = 4/52 = 1/13
+p(not draw an ace from a standard deck of cards) = 48/52 = 12/13
+
+State if this is True or False. “The probability of an impossible event is 1”
+False
+Select the correct range that represents the values of probability:
+[0, 1]
+
+Addition Rule of Probability is used to calculate the probability of the occurrence of at least one of two events. It states that for any two events A and B:
+P(A or B) = P(A) + P(B) - P(A and B)
+p(any queen or any king) = p(queen) + p(king) - p(queen and king) = 4/52 + 4/52 - 0 = 8/52 = 2/13
+p(red card or king) = p(red card) + p(king) - p(red card and king) = 26/52 + 4/52 - 2/52 = 28/52 = 7/13
+
+The Multiplication Rule of Probability is used to calculate the probability of the occurrence of two events happening together. For independent events A and B, it states:
+P(A and B) = P(A) * P(B)
+p(roll a 4 and then a 5 on a fair six-sided die) = p(roll a 4) * p(roll a 5) = 1/6 * 1/6 = 1/36
+p(draw an ace and then a king from a standard deck of cards without replacement) = p(draw an ace) * p(draw a king after drawing an ace) = 4/52 * 4/51 = 16/2652 = 4/663
+
+You have a bag with 10 red balls and 10 blue balls. Without replacing the balls, what is the probability of drawing a red ball first, followed by a blue ball?
+Answer: (10/20) * (10/19) = 100/380 = 5/19
+
+1/4
+
+
+5/9
+
+
+10/19
+
+
+5/19
+
+Q2.
+At a party, there are 30 guests, and 18 of them like pizza, while 15 like burgers. If 9 guests like both pizza and burgers, what percentage of guests like either pizza or burgers?
+Answer: 18 + 15 - 9 = 24 guests like either pizza or burgers.
+(24/30) * 100 = 80%
+
+45%
+
+
+60%
+
+
+80%
+
+
+75%
+
+Q3.
+If there is an 80% chance that a planted seed will germinate, what is the probability that a seed will not germinate?
+Answer: 100% - 80% = 20%
+
+20%
+
+
+80%
+
+
+50%
+
+
+100%
+
+Q4.
+What is the probability of flipping a coin and getting heads, and then rolling a die and getting a 4 (assuming the events are independent)?
+Answer: p(heads) * p(4) = (1/2) * (1/6) = 1/12
+
+1/4
+
+
+1/12
+
+
+1/6
+
+
+Depends on the coin lands
+
+Q5.
+In a survey, 55% of respondents prefer decks with jokers, and 40% prefer decks without jokers. What percentage of respondents prefer either decks with jokers or decks without jokers?
+Answer: 55% + 40% = 95%
+
+55%
+
+
+40%
+
+
+100%
+
+
+95%
+
+Conditional Probability:
+Conditional probability is the probability of an event occurring given that another event has already occurred. It is denoted as P(A|B), which reads as "the probability of A given B". The formula for conditional probability is:
+P(A|B) = P(A and B) / P(B), provided that P(B) > 0.
+Example:
+In a deck of cards, what is the probability of drawing an ace given that the card drawn is a spade?
+Let A be the event of drawing an ace, and B be the event of drawing a spade.
+P(A and B) = P(drawing the ace of spades) = 1/52
+P(B) = P(drawing a spade) = 13/52 = 1/4
+Using the conditional probability formula:
+P(A|B) = P(A and B) / P(B) = (1/52) / (1/4) = 1/13
+Therefore, the probability of drawing an ace given that the card drawn is a spade is 1/13.
+
+Bayes' Theorem:
+Bayes' theorem is a fundamental theorem in probability theory that describes how to update the probability of an event based on new evidence. It is expressed mathematically as:
+P(A|B) = [P(B|A) * P(A)] / P(B), provided that P(B) > 0.
+Example:
+Suppose a medical test for a disease is 99% accurate, meaning that it correctly identifies 99% of those with the disease and 99% of those without the disease. If 1% of the population has the disease, what is the probability that a person who tests positive actually has the disease?
+Let A be the event that the person has the disease, and B be the event that the person tests positive.
+P(A) = 0.01 (1% of the population has the disease)
+P(B|A) = 0.99 (the test is 99% accurate for those with the disease)
+P(B|not A) = 0.01 (the test is 1% inaccurate for those without the disease)
+P(not A) = 0.99 (99% of the population does not have the disease)
+Using the law of total probability to find P(B):
+P(B) = P(B|A) * P(A) + P(B|not A) * P(not A)
+P(B) = (0.99 * 0.01) + (0.01 * 0.99) = 0.0198
+Now, applying Bayes' theorem:
+P(A|B) = [P(B|A) * P(A)] / P(B) = (0.99 * 0.01) / 0.0198 ≈ 0.5
+Therefore, the probability that a person who tests positive actually has the disease is approximately 50%.
+
+In a city, the probability of a customer visiting a coffee shop in the morning is 0.7, and the probability of both visiting in the morning and ordering a breakfast item is 0.42. What is the probability that a customer will order a breakfast item, given they visit in the morning?
+Answer: Using the conditional probability formula:
+P(Breakfast|Morning) = P(Morning and Breakfast) / P(Morning)
+P(Breakfast|Morning) = 0.42 / 0.7 = 0.6
+
+0.45
+
+
+0.6
+
+
+0.75
+
+
+0.55
+
+Q2.
+In which of the following applications is Bayes' theorem commonly used?
+Answer: All of the above
+
+Spam email filtering
+
+
+Weather forecasting
+
+
+Recommending movies on streaming platforms
+
+
+All of the above

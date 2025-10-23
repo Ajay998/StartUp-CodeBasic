@@ -1,0 +1,114 @@
+Descriptive vs Inferential Statistics
+Descriptive statistics involves summarizing and describing the main features of a dataset, such as measures of central tendency (mean, median, mode) and measures of variability (range, variance, standard deviation).
+Eg: Calculating the average test score of a class, summarizing survey results with percentages and frequencies.
+
+Inferential statistics involves making predictions or inferences about a population based on a sample of data, using techniques such as hypothesis testing, confidence intervals, and regression analysis.  
+Eg: Estimating the average height of all adults in a country based on a sample, testing whether a new drug is effective compared to a placebo.
+
+What is the purpose of random sampling in inferential statistics
+Random sampling is used in inferential statistics to ensure that the sample selected is representative of the larger population. This helps to minimize bias and allows for more accurate generalizations and conclusions about the population based on the sample data. Random sampling increases the likelihood that every individual in the population has an equal chance of being included in the sample, which enhances the validity of statistical inferences.
+
+What is the relationship between population and sample in inferential statistics
+In inferential statistics, a population refers to the entire group of individuals or items that are of interest for a particular study, while a sample is a subset of that population that is selected for analysis. The relationship between the two is that the sample is used to make inferences or draw conclusions about the population. By analyzing the sample data, statisticians can estimate population parameters, test hypotheses, and make predictions about the broader population. The accuracy of these inferences depends on how well the sample represents the population.
+Measures of Central Tendency
+Mean
+- The mean is calculated by adding all the values in a dataset and dividing by the number of values.
+- It is sensitive to extreme values (outliers) which can skew the mean.
+Eg: For the dataset [2, 3, 5, 7, 11], the mean is (2 + 3 + 5 + 7 + 11) / 5 = 5.6
+-AVERAGE(2, 3, 5, 7, 11) = 5.6
+
+Median
+- The median is the middle value in a dataset when the values are arranged in ascending order.
+- It is less affected by outliers and provides a better measure of central tendency for skewed distributions.
+Eg: For the dataset [2, 3, 5, 7, 11], the median is 5. For the dataset [2, 3, 5, 7, 100], the median is still 5.
+-MEDIAN(2, 3, 5, 7, 11) = 5
+
+Mode
+- The mode is the value that appears most frequently in a dataset.
+- A dataset may have no mode, one mode, or multiple modes (bimodal or multimodal).
+Eg: For the dataset [2, 3, 5, 7, 7, 11], the mode is 7. For the dataset [2, 3, 5, 7], there is no mode.
+-MODE.SNGL(2, 3, 5, 7, 7, 11) = 7
+
+Percentiles and Quartiles
+Percentiles divide a dataset into 100 equal parts, indicating the relative standing of a value within the dataset.
+Eg: The 25th percentile (P25) is the value below which 25% of the data falls.
+[23,32,45,67,89,90,123,145,167,189,200]
+P25 = 67
+=PERCENTILE.INC([23,32,45,67,89,90,123,145,167,189,200], 0.25) = 67
+
+IQR (Interquartile Range)
+- The interquartile range (IQR) is the difference between the 75th percentile (Q3) and the 25th percentile (Q1).
+- It measures the spread of the middle 50% of the data and is useful for identifying outliers.
+Eg: For the dataset [23,32,45,67,89,90,123,145,167,189,200], Q1 = 67 and Q3 = 145, so IQR = 145 - 67 = 78.
+=IQR([23,32,45,67,89,90,123,145,167,189,200]) = 78
+
+outliers
+- Outliers are data points that fall significantly outside the range of the majority of the data.
+- They can be identified using the IQR method: any value below Q1 - 1.5*IQR or above Q3 + 1.5*IQR is considered an outlier.
+Eg: For the dataset [23,32,45,67,89,90,123,145,167,189,200], with IQR = 78, any value below 67 - 1.5*78 = -50.5 or above 145 + 1.5*78 = 262.5 is an outlier. In this case, there are no outliers.
+-OUTLIERS([23,32,45,67,89,90,123,145,167,189,200]) = None
+
+Measure of Dispersion (for variability)
+Range
+- The range is the difference between the maximum and minimum values in a dataset.
+Eg: For the dataset [2, 3, 5, 7, 11], the range is 11 - 2 = 9.
+-RANGE([2, 3, 5, 7, 11]) = 9
+
+Variance
+- Variance measures the average squared deviation of each value from the mean.
+- It provides an indication of how spread out the values are in the dataset.
+Eg: For the dataset [2, 3, 5, 7, 11], the variance is calculated as follows:
+1. Calculate the mean: 5.6
+2. Calculate the squared deviations from the mean: [(2-5.6)², (3-5.6)², (5-5.6)², (7-5.6)², (11-5.6)²] = [12.96, 6.76, 0.36, 1.96, 29.16]
+3. Calculate the average of these squared deviations: (12.96 + 6.76 + 0.36 + 1.96 + 29.16) / 5 = 10.64
+-VAR.P([2, 3, 5, 7, 11]) = 10.64
+
+Standard Deviation
+- Standard deviation is the square root of the variance and provides a measure of the average distance of each value from the mean.
+- It is expressed in the same units as the original data, making it more interpretable.
+Eg: For the dataset [2, 3, 5, 7, 11], the standard deviation is the square root of the variance (10.64), which is approximately 3.26.
+-STDEV.P([2, 3, 5, 7, 11]) = 3.26
+
+
+Box Plot and Whisper Plot
+Box Plot
+- A box plot (or box-and-whisker plot) is a graphical representation of a dataset that displays its central tendency and variability.
+- It shows the median, quartiles (Q1 and Q3), and potential outliers.
+- The box represents the interquartile range (IQR), with a line inside the box indicating the median. The "whiskers" extend to the minimum and maximum values within 1.5*IQR from the quartiles.
+Eg:
+[23,32,45,67,89,90,123,145,167,189,200]
+Box Plot:
+  |---------|         |---------|
+  Q1       Median     Q3
+  67        90       145   
+
+Whiskers extend to 32 (min) and 200 (max) within 1.5*IQR.
+Whisper Plot
+- A whisper plot is a variation of the box plot that provides a more detailed view of the distribution of the data.
+- It includes a smoothed density curve overlaid on the box plot, allowing for better visualization of the data's distribution shape.
+- Whisper plots are useful for identifying multimodal distributions and understanding the overall data distribution.
+Eg:
+[23,32,45,67,89,90,123,145,167,189,200]
+Whisper Plot:
+  |---------|         |---------|
+  Q1       Median     Q3
+  67        90       145   
+  (with a density curve overlay showing the distribution shape)
+
+Outliers are indicated similarly to box plots.
+-OUTLIERS([23,32,45,67,89,90,123,145,167,189,200]) = None
+-BOX.PLOT([23,32,45,67,89,90,123,145,167,189,200]) = Visual Representation
+-WHISPER.PLOT([23,32,45,67,89,90,123,145,167,189,200]) = Visual Representation with Density Curve   
+
+Correlation vs Causation
+Correlation refers to a statistical relationship between two variables, indicating that they tend to change together. However, correlation does not imply that one variable causes the other to change. Causation, on the other hand, indicates that a change in one variable directly causes a change in another variable. It is important to distinguish between the two, as a correlation may be coincidental or influenced by other factors (confounding variables) rather than a direct causal relationship.
+Eg: There may be a correlation between ice cream sales and drowning incidents, as both tend to increase during the summer months. However, this does not mean that ice cream sales cause drowning incidents; instead, both are influenced by the warmer weather (a confounding variable).
+Eg: A study finds a correlation between exercise and weight loss, but this does not prove that exercise alone causes weight loss, as diet and other factors may also play a role.
+Eg: A study finds that smoking is correlated with lung cancer, and further research establishes that smoking causes lung cancer, demonstrating a causal relationship.
+
+=CORREL(array1, array2) = correlation coefficient between two datasets
+=CAUSATION(variable1, variable2) = requires experimental or longitudinal study to establish causation
+
+CORREL([1,2,3,4,5], [2,4,6,8,10]) = 1 (perfect positive correlation)
+CAUSATION(smoking, lung cancer) = Established through research
+
