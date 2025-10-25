@@ -1,0 +1,143 @@
+Central Limit Theorem
+The Central Limit Theorem (CLT) is a fundamental statistical principle that states that the distribution of the sum (or average) of a large number of independent, identically distributed random variables approaches a normal distribution, regardless of the original distribution of the variables.
+Key Points:
+1. Independence: The random variables must be independent of each other.
+2. Identically Distributed: The random variables should have the same probability distribution.
+3. Sample Size: The theorem holds true as the sample size becomes large (commonly n > 30 is considered sufficient).
+4. Mean and Variance: The mean of the sampling distribution will be equal to the mean of the original distribution, and the variance will be equal to the variance of the original distribution divided by the sample size.
+Applications:
+- Used in hypothesis testing and confidence interval estimation.
+- Facilitates the use of normal distribution in various statistical methods.
+Mathematical Representation:
+If X₁, X₂, ..., Xₙ are independent, identically distributed random variables with mean μ and variance σ², then the standardized sum:
+Z = ( (ΣXᵢ - nμ) / (σ√n) )
+approaches a standard normal distribution as n approaches infinity.
+In summary, the Central Limit Theorem is a powerful tool in statistics that allows for the approximation of distributions and simplifies the analysis of complex data sets. It is widely used in various fields such as economics, psychology, and natural sciences.
+
+Random sampling and sampling bias
+Random sampling is a technique used to select a subset of individuals from a larger population in such a way that every individual has an equal chance of being chosen. This method helps to ensure that the sample is representative of the population, which is crucial for making valid inferences.
+Sampling bias, on the other hand, occurs when certain individuals or groups are systematically excluded from the sample, leading to a non-representative sample. This can result in skewed or invalid conclusions. It is essential to minimize sampling bias to enhance the reliability of statistical analyses.
+
+The law of large numbers
+The Law of Large Numbers (LLN) is a statistical theorem that states that as the size of a sample increases, the sample mean will converge to the population mean. In other words, the more observations you collect, the closer the average of those observations will be to the true average of the entire population.
+Eg:
+If you flip a fair coin a large number of times, the proportion of heads will get closer and closer to 0.5 as the number of flips increases.
+
+Standard Error
+The standard error (SE) is a measure of the variability or dispersion of a sample statistic, such as the sample mean, from the true population parameter. It quantifies how much the sample mean is expected to vary from the population mean due to random sampling.
+The standard error is calculated using the formula:
+SE = σ / √n
+where σ is the standard deviation of the population and n is the sample size.
+A smaller standard error indicates that the sample mean is likely to be closer to the population mean, while a larger standard error suggests greater variability and less precision in the estimate. Standard error is commonly used in hypothesis testing and constructing confidence intervals.
+
+Confidence Intervals
+A confidence interval (CI) is a range of values that is likely to contain the true population parameter with a specified level of confidence. It provides an estimate of the uncertainty associated with a sample statistic, such as the sample mean.
+The formula for a confidence interval for the population mean is:CI = x̄ ± Z*(SE)
+where:
+- x̄ is the sample mean
+- Z* is the Z-score corresponding to the desired confidence level (e.g., 1.96 for 95% confidence)
+- SE is the standard error of the sample mean
+For example, a 95% confidence interval means that if we were to take many samples and construct confidence intervals for each sample, approximately 95% of those intervals would contain the true population mean.
+Confidence intervals are widely used in statistics to provide a range of plausible values for population parameters and to assess the precision of estimates.
+
+Z Scores
+A Z score, also known as a standard score, is a statistical measurement that describes a value's relationship to the mean of a group of values. It is expressed in terms of standard deviations from the mean.
+The formula to calculate a Z score is:
+Z = (X - μ) / σ
+where:
+- X is the value being measured
+- μ is the mean of the population
+- σ is the standard deviation of the population
+A Z score indicates how many standard deviations a particular value is from the mean. A Z score of 0 indicates that the value is equal to the mean, while a positive Z score indicates that the value is above the mean, and a negative Z score indicates that it is below the mean.
+
+Hypothesis Testing
+Hypothesis testing is a statistical method used to make inferences or draw conclusions about a population based on a sample of data. It involves formulating a null hypothesis (H₀) and an alternative hypothesis (H₁), and then using sample data to determine whether to reject or fail to reject the null hypothesis.
+The steps involved in hypothesis testing are:
+1. Formulate the null and alternative hypotheses.
+2. Choose a significance level (α), commonly set at 0.05.
+3. Collect sample data and calculate the test statistic (e.g., Z score, t score).
+4. Determine the critical value(s) based on the significance level and the type of test (one-tailed or two-tailed).
+5. Compare the test statistic to the critical value(s).
+6. Make a decision to reject or fail to reject the null hypothesis based on the comparison.
+Hypothesis testing is widely used in various fields, including medicine, social sciences, and business, to evaluate the validity of claims or assumptions about population parameters.  
+Types of Errors in Hypothesis Testing
+In hypothesis testing, there are two types of errors that can occur when making decisions based on sample data:
+1. Type I Error (False Positive): This occurs when the null hypothesis (H₀) is rejected when it is actually true. The probability of committing a Type I error is
+denoted by the significance level (α), which is typically set at 0.05. This means there is a 5% chance of rejecting a true null hypothesis.
+2. Type II Error (False Negative): This occurs when the null hypothesis (H₀) is not rejected when it is actually false. The probability of committing a Type II error is denoted by β. The power of a test (1 - β) represents the probability of correctly rejecting a false null hypothesis.
+Minimizing these errors is crucial for making accurate inferences in hypothesis testing. Researchers often balance the risks of Type I and Type II errors by choosing appropriate significance levels and sample sizes.
+P-Values
+A p-value is a statistical measure that helps determine the significance of the results obtained from a hypothesis test. It represents the probability of observing the data, or something more extreme, assuming that the null hypothesis (H₀) is true.
+Interpreting P-Values:
+- A small p-value (typically ≤ 0.05) indicates strong evidence against the null hypothesis, leading to its rejection in favor of the alternative hypothesis (H₁).
+- A large p-value (> 0.05) suggests weak evidence against the null hypothesis, resulting in a failure to reject it.
+It is important to note that the p-value does not measure the probability that the null hypothesis is true or false; rather, it quantifies the evidence against it based on the observed data. P-values are widely used in various fields of research to assess the significance of findings and guide decision-making processes.
+
+Null vs alternative hypothesis
+In hypothesis testing, the null hypothesis (H₀) and the alternative hypothesis (H₁) are two competing statements about a population parameter.
+- Null Hypothesis (H₀): This is a statement of no effect or no difference. It assumes that any observed differences in the sample data are due to random chance. The null hypothesis is typically the default assumption that researchers aim to test against.
+- Alternative Hypothesis (H₁): This is a statement that contradicts the null hypothesis. It suggests that there is a significant effect or difference in the population. The alternative hypothesis represents what the researcher is trying to provide evidence for through their study.
+During hypothesis testing, researchers collect sample data and use statistical methods to determine whether to reject or fail to reject the null hypothesis in favor of the alternative hypothesis.
+
+Z-test vs T-test
+Z-test and T-test are both statistical tests used to determine if there is a significant difference between sample means, but they are used in different situations:
+- Z-test: This test is used when the population standard deviation is known, and the sample size is large (typically n > 30). The Z-test follows a standard normal distribution (Z-distribution) and is appropriate for testing hypotheses about population means when the conditions are met.
+- T-test: This test is used when the population standard deviation is unknown, and the sample size is small (typically n ≤ 30). The T-test follows a Student's t-distribution, which accounts for the additional uncertainty introduced by estimating the population standard deviation from the sample. The T-test is suitable for testing hypotheses about population means when the sample size is small or when the population standard deviation is not known.
+In summary, use a Z-test for large samples with known population standard deviation, and a T-test for small samples with unknown population standard deviation.
+
+Rejection regions
+In hypothesis testing, the rejection region (or critical region) is the range of values for the test statistic that leads to the rejection of the null hypothesis (H₀). It is determined based on the chosen significance level (α) and the type of test being conducted (one-tailed or two-tailed).
+- One-Tailed Test: The rejection region is located in one tail of the distribution (either the left or right tail) depending on the direction of the alternative hypothesis (H₁).
+- Two-Tailed Test: The rejection region is split between both tails of the distribution, with half of the significance level (α/2) allocated to each tail.
+If the calculated test statistic falls within the rejection region, the null hypothesis is rejected in favor of the alternative hypothesis. If it falls outside the rejection region, the null hypothesis is not rejected.
+Rejection regions are essential for making decisions in hypothesis testing and help researchers determine the statistical significance of their results.
+
+One-tailed vs two-tailed tests
+In hypothesis testing, one-tailed and two-tailed tests refer to the directionality of the test based on the alternative hypothesis (H₁):
+- One-Tailed Test: This test is used when the alternative hypothesis specifies a direction of the effect (e.g., greater than or less than a certain value). The rejection region is located in only one tail of the distribution. For example, if testing whether a new drug is more effective than an existing one, a one-tailed test would be appropriate.
+- Two-Tailed Test: This test is used when the alternative hypothesis does not specify a direction (e.g., not equal to a certain value). The rejection region is split between both tails of the distribution. For example, if testing whether there is any difference in effectiveness between two drugs, a two-tailed test would be appropriate.
+The choice between one-tailed and two-tailed tests depends on the research question and the nature of the hypothesis being tested.  
+
+Statistical Power and effect size
+Statistical power is the probability that a hypothesis test will correctly reject a false null hypothesis (H₀). It is a measure of a test's ability to detect an effect when there is one. A higher statistical power indicates a greater likelihood of identifying true effects in the data.
+Effect size, on the other hand, is a quantitative measure of the magnitude of the difference or relationship being studied. It provides information about the practical significance of the results, beyond just statistical significance.
+Both statistical power and effect size are important considerations in the design of experiments and studies. Researchers often aim for a high statistical power (commonly 0.80 or higher) to ensure that their tests are sensitive enough to detect meaningful effects, while also considering the effect size to interpret the practical implications of their findings.
+
+A/B Testing
+A/B testing, also known as split testing, is a statistical method used to compare two versions of a webpage, app, or other product to determine which one performs better in terms of a specific metric (e.g., conversion rate, click-through rate). In an A/B test, users are randomly assigned to one of two groups: Group A (the control group) experiences the original version, while Group B (the treatment group) experiences the modified version.
+The performance of both groups is measured and compared using statistical analysis to determine if there is a significant difference between the two versions. A/B testing is widely used in marketing, product development, and user experience design to optimize performance and make data-driven decisions.
+Eg: An e-commerce website may use A/B testing to compare two different layouts of a product page to see which one leads to higher sales.
+Steps in A/B Testing:
+1. Define the objective and key metric to be measured.
+2. Create two versions (A and B) of the webpage or product.
+3. Randomly assign users to either version A or version B.
+4. Collect data on user interactions and performance metrics.
+5. Analyze the data using statistical methods to determine if there is a significant difference between the two versions.
+6. Implement the version that performs better based on the analysis.
+
+A/B testing using Z-test
+A/B testing can be analyzed using a Z-test when comparing the proportions of success (e.g., conversion rates) between two groups (A and B). The Z-test helps determine if the difference in proportions is statistically significant.
+Steps to perform A/B testing using a Z-test:
+1. Define the null hypothesis (H₀): There is no difference in conversion rates between groups A and B (pA = pB).
+2. Define the alternative hypothesis (H₁): There is a difference in conversion rates between groups A and B (pA ≠ pB).
+3. Collect data: Record the number of successes and total observations for both groups.
+4. Calculate the sample proportions:
+   pA = number of successes in group A / total observations in group A
+   pB = number of successes in group B / total observations in group B
+5. Calculate the pooled proportion:
+   p̂ = (number of successes in group A + number of successes in group B) / (total observations in group A + total observations in group B)
+6. Calculate the standard error (SE) of the difference in proportions:
+   SE = √[p̂(1 - p̂)(1/nA + 1/nB)]
+   where nA and nB are the total observations in groups A and B, respectively.
+7. Calculate the Z-test statistic:
+   Z = (pA - pB) / SE
+8. Determine the critical value(s) based on the chosen significance level (α) and the type of test (one-tailed or two-tailed).
+9. Compare the calculated Z value to the critical value(s) to decide whether to reject or fail to reject the null hypothesis.
+10. Interpret the results: If the null hypothesis is rejected, conclude that there is a significant difference in conversion rates between groups A and B.
+
+
+Statistical Significance vs Practical Significance
+Statistical significance and practical significance are two important concepts in the interpretation of research findings:
+- Statistical Significance: This refers to the likelihood that the observed results are not due to random chance. It is typically determined using a p-value, with a common threshold of 0.05. If the p-value is less than or equal to this threshold, the results are considered statistically significant, indicating that there is sufficient evidence to reject the null hypothesis (H₀).
+- Practical Significance: This refers to the real-world importance or relevance of the findings. Even if a result is statistically significant, it may not have practical significance if the effect size is small or if the findings do not have meaningful implications in the context of the research question. Practical significance considers whether the results have a tangible impact or value in real-life applications.
+In summary, statistical significance indicates whether an effect exists, while practical significance assesses the importance of that effect in a real-world context. Both aspects should be considered when interpreting research results.

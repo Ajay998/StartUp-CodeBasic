@@ -65,3 +65,35 @@ The normal distribution has several important properties:
 3. Empirical Rule: Approximately 68% of the data falls within one standard deviation of the mean, 95% within two standard deviations, and 99.7% within three standard deviations.
 4. Asymptotic: The tails of the normal distribution approach the horizontal axis but never touch it.
 The normal distribution is widely used in statistics and various fields due to its natural occurrence in many real-world phenomena, such as heights, test scores, and measurement errors. It serves as the foundation for many statistical methods and hypothesis testing.
+
+Z Score
+-------
+A Z-score, also known as a standard score, is a statistical measurement that describes a data point's position relative to the mean of a group of data points. It is expressed in terms of standard deviations from the mean. The Z-score indicates how many standard deviations a particular value is above or below the mean.
+The formula to calculate the Z-score is:
+Z = (X - μ) / σ
+Where:
+- Z is the Z-score
+- X is the value being standardized
+- μ is the mean of the data set
+- σ is the standard deviation of the data set
+Interpreting Z-scores:
+- A Z-score of 0 indicates that the value is equal to the mean.
+- A positive Z-score indicates that the value is above the mean.
+- A negative Z-score indicates that the value is below the mean.
+Z-scores are commonly used in statistics for standardizing data, comparing scores from different distributions, and identifying outliers. They are particularly useful in the context of normal distributions, where they help determine the probability of a value occurring within a given range.   
+
+standard Normal Distribution
+-----------------------------------
+The Standard Normal Distribution is a special case of the normal distribution with a mean (μ) of 0 and a standard deviation (σ) of 1. It is also known as the Z-distribution. The standard normal distribution is used to simplify calculations and comparisons of normally distributed data.
+The probability density function (PDF) of the standard normal distribution is given by:
+f(z) = (1 / √(2π)) * e^(-z² / 2)
+Where:
+- e is the base of the natural logarithm (approximately equal to 2.71828)
+- π is a mathematical constant (approximately equal to 3.14159)
+- z is the Z-score
+The standard normal distribution has the following properties:
+1. Symmetry: The distribution is symmetric around the mean of 0.
+2. Mean, Median, and Mode: In the standard normal distribution, the mean, median, and mode are all equal to 0.
+3. Empirical Rule: Approximately 68% of the data falls within one standard deviation (between -1 and 1), 95% within two standard deviations (between -2 and 2), and 99.7% within three standard deviations (between -3 and 3).
+4. Asymptotic: The tails of the standard normal distribution approach the horizontal axis but never touch it.
+The standard normal distribution is widely used in statistics for hypothesis testing, confidence intervals, and other statistical analyses. It allows for the standardization of normally distributed data, making it easier to compare and interpret results across different datasets.     
