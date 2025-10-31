@@ -1,0 +1,9 @@
+Supervised Learning
+A type of machine learning where the model is trained on a labeled dataset, meaning that each input data point is paired with the correct output.
+The model learns to map inputs to outputs based on this training data.
+The goal is to make accurate predictions on new, unseen data.
+
+Eg: In a spam detection system, the model is trained on a dataset of emails labeled as "spam" or "not spam".
+
+Common Algorithms
+Simple Linear Regression: Used for predicting continuous output variables based on one or more input features.
