@@ -1,0 +1,36 @@
+Machine Learning
+Training a model to make predictions or decisions without being explicitly programmed to perform the task. 
+It involves feeding data into algorithms that can learn patterns and make inferences.
+
+Datasets
+Collections of data used to train and evaluate machine learning models.
+Common types include structured data (tables), unstructured data (images, text), and time-series data.
+
+Labelled Data
+Data that has been annotated with the correct output or category.  
+Eg: In a dataset of images, each image might be labeled with the object it contains (e.g., "cat", "dog").
+
+Input and Output
+Input refers to the data fed into the machine learning model, while output is the prediction or classification made by the model based on that input.
+
+Training
+The process of teaching a machine learning model to recognize patterns in data by adjusting its parameters based on the input data and the expected output.
+This typically involves splitting the dataset into training and validation sets.
+
+Spam Detection
+A common application of machine learning where models are trained to classify emails as "spam" or "not spam" based on features such as keywords, sender information, and email structure.
+
+Classification
+A type of machine learning task where the goal is to assign input data into predefined categories or classes.
+Output: Categorical Output: The output variable is a category or class. (e.g., "spam", "not spam")
+Eg: Email spam detection, image recognition, Fraud detection.
+Binary Classification: Two classes (e.g., spam vs. not spam).
+Multiclass Classification: More than two classes (e.g., classifying types of fruits).
+
+Regression
+A type of machine learning task where the goal is to predict a continuous output variable based on input features.
+Output: Continuous Output: The output variable is a real-valued number. (e.g., house prices, temperature).
+Eg: Predicting house prices based on features like size, location, and number of bedrooms.
+Stock price prediction, weather forecasting, salary estimation.
+
+

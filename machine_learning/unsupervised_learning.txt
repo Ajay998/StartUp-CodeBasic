@@ -1,0 +1,6 @@
+Unsupervised Learning
+A type of machine learning where the model is trained on an unlabeled dataset, meaning that the input data does not have corresponding output labels.
+The model learns to identify patterns, structures, or relationships within the data without predefined categories.
+The goal is to discover hidden patterns or groupings in the data.
+Eg: In customer segmentation, the model analyzes purchasing behavior data to group customers with similar buying patterns without prior knowledge of customer categories.
+Document classification, clustering, anomaly detection.

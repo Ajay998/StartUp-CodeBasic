@@ -1,0 +1,19 @@
+Multiple Linear Regression
+Multiple linear regression is an extension of simple linear regression that models the relationship between a dependent variable (target) and two or more independent variables (predictors) by fitting a linear equation to observed data.
+The goal is to find the best-fitting hyperplane that predicts the dependent variable based on multiple independent variables.
+The equation of a multiple linear regression model is typically represented as:
+y = β0 + β1*x1 + β2*x2 + ... + βn*xn + ε
+Where:
+- y is the dependent variable (target)
+- x1, x2, ..., xn are the independent variables (predictors)
+- β0 is the y-intercept (the value of y when all x's are 0)
+- β1, β2, ..., βn are the coefficients (the change in y for a one-unit change in each respective x)
+- ε is the error term (the difference between the observed and predicted values)
+
+y = mx1 + nx2 + b
+price = m1 * area + m2 * bedrooms + b
+Where:
+- y is the predicted value
+- m1 and m2 are the coefficients for the independent variables area and bedrooms respectively
+- x1 and x2 are the independent variables
+- b is the y-intercept (β0)

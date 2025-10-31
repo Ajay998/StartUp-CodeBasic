@@ -1,0 +1,26 @@
+Simple Linear Regression
+Simple linear regression is a statistical method used to model the relationship between a dependent variable (target) and a single independent variable (predictor) by fitting a linear equation to observed data.
+The goal is to find the best-fitting straight line that predicts the dependent variable based on the independent variable.
+
+The equation of a simple linear regression line is typically represented as:
+y = β0 + β1*x + ε
+Where:
+- y is the dependent variable (target)
+- x is the independent variable (predictor)
+- β0 is the y-intercept (the value of y when x = 0)
+- β1 is the slope of the line (the change in y for a one-unit change in x)
+- ε is the error term (the difference between the observed and predicted values)
+
+Best fitting Line
+The best-fitting line is determined by minimizing the sum of the squared differences between the observed values and the values predicted by the linear model. This method is known as "least squares estimation."
+
+Gradient Descent
+Gradient descent is an optimization algorithm used to minimize the cost function in linear regression. It iteratively adjusts the parameters (β0 and β1) to find the values that minimize the cost function, which is typically the mean squared error (MSE) between the observed and predicted values.
+
+y = mx + b
+price = m * area + b
+Where:
+- y is the predicted value
+- m is the slope of the line (β1)
+- x is the independent variable
+- b is the y-intercept (β0)
