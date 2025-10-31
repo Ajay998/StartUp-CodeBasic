@@ -168,11 +168,24 @@ def make_predictions(model, new_data):
     
     return predictions
 
+def codebasic_workflow():
+    df = pd.read_csv('datas/home_prices.csv')
+    model = LinearRegression()
+    model.fit(df[['area_sqr_ft']], df['price_lakhs'])
+    print("Predicted price for 1500 sq ft:", model.predict([[1500]]))
+    print("Slope (m):", model.coef_)
+    print("Intercept (b):", model.intercept_)
+    print("Equation: price = m * area + b")
+    print(f"Equation: price = {model.coef_[0]} * area + {model.intercept_}: {model.coef_[0] * 1500 + model.intercept_}")
+
+
 def main():
     """Main function to run the complete linear regression workflow"""
     print("="*70)
     print("SIMPLE LINEAR REGRESSION WITH SCIKIT-LEARN")
     print("="*70)
+    print("\nStarting the linear regression workflow...\n")
+    codebasic_workflow()
     
     # Configuration
     FILE_PATH = 'datas/home_prices.csv'
